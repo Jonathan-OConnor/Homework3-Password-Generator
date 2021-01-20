@@ -1,3 +1,4 @@
+/* Default CSS */
 *,
 *::before,
 *::after {
@@ -140,5 +141,29 @@ input::-webkit-inner-spin-button {
   .btn {
     font-size: 0.8rem;
   }
+}
+
+/* My CSS */
+#parameterErrorMsg {
+  display: none; 
+  color: red; 
+  padding-right: 10px;
+}
+
+#lengthErrorMsg {
+  display: none; 
+  color: red;
+  padding-right: 25px;
+}
+
+.character-Selector-Row{
+  margin-top: 20px;
+}
+.indented-Row{
+  margin-left: 10px;
+}
+
+.character-Option {
+  margin-right: 20px;
 }
 

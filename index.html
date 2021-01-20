@@ -40,7 +40,7 @@
         </div>
         <div class="row g-3 align-items-center">
           <div class="col-4">
-            <label for="passwordLength" class="col-form-label" style="margin-left: 10px;">Password Length:</label>
+            <label for="passwordLength" class="col-form-label indented-Row">Password Length:</label>
           </div>
           <div class="col-2">
             <input id="passwordLength" class="form-control" aria-describedby="passwordLengthHelpInline" type="number"
@@ -53,22 +53,22 @@
           </div>
         </div>
         <div class="row text-end">
-            <p id="lengthErrorMsg" style="display: none; color: red; padding-right: 25px;">Number must be between 8 and 128</p>
+            <p id="lengthErrorMsg">Number must be between 8 and 128</p>
         </div>
-        <div class="row" style="margin-top: 20px;">
-          <div class="col-12" style="margin-left: 10px;">
+        <div class="row character-Selector-Row">
+          <div class="col-12 indented-Row">
             <label class="col-form-label">Select character types to be in password (Select at least one):</label>
           </div>
         </div>
         <div class="row">
-          <div class="col-12 text-center" style="margin-left: 10px;">
-            <label class="checkbox-inline" style="margin-right: 20px;"><input id="lowercaseCheck" type="checkbox" value="" onClick="toggleLowercase()">Lowercase</label>
-            <label class="checkbox-inline" style="margin-right: 20px;"><input id="uppercaseCheck" type="checkbox" value="" onClick="toggleUppercase()">Uppercase</label>
-            <label class="checkbox-inline" style="margin-right: 20px;"><input id="numberCheck" type="checkbox" value="" onClick="toggleNumber()">Numeric</label>
-            <label class="checkbox-inline" style="margin-right: 20px;"><input id="specialCheck" type="checkbox" value="" onClick="toggleSpecial()">Special characters</label>
+          <div class="col-12 text-center indented-Row">
+            <label class="checkbox-inline character-Option"><input id="lowercaseCheck" type="checkbox" value="" onClick="toggleLowercase()">Lowercase</label>
+            <label class="checkbox-inline character-Option" ><input id="uppercaseCheck" type="checkbox" value="" onClick="toggleUppercase()">Uppercase</label>
+            <label class="checkbox-inline character-Option" ><input id="numberCheck" type="checkbox" value="" onClick="toggleNumber()">Numeric</label>
+            <label class="checkbox-inline character-Option" ><input id="specialCheck" type="checkbox" value="" onClick="toggleSpecial()">Special characters</label>
           </div>
           <div class="row text-end">
-            <p id="parameterErrorMsg" style="display: none; color: red; padding-right: 10px;">Select at least one option</p>
+            <p id="parameterErrorMsg">Select at least one option</p>
         </div>
         </div>
   
