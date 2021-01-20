@@ -1,3 +1,4 @@
+
 // Assignment Code
 var passwordParameters = { "lowercase": false, "uppercase": false, "number": false, "special": false }
 var lowercaseList = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
@@ -6,8 +7,11 @@ var numberList = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
 var specialList = ["!", "#", "$", "%", "&", "(", ")", "*", "+", "/", ":", ";", "<", "=", ">", "?", "@", "[", "]", "^", "_", "{", "|", "}", "~"]
 var passwordList = []
 var generateBtn = document.querySelector("#saveChanges");
+var myModal = new bootstrap.Modal(document.getElementById('settingsModal'), {
+  keyboard: false
+})
 
-// Write password to the #password input
+// functions to handle checkbox toggling for password settings
 function toggleLowercase() {
   var checkBox = document.getElementById("lowercaseCheck")
   if (checkBox.checked == true) {
@@ -44,35 +48,39 @@ function toggleSpecial() {
   }
 }
 
+// function to check if password length and password settings are valid
 function checkInputs() {
   var issues = false
   var length = Number(document.getElementById("passwordLength").value)
+  document.getElementById("lengthErrorMsg").style.display = "none"
+  document.getElementById("parameterErrorMsg").style.display = "none"
   if (length < 8 || length > 128) {
-    // code for "display error message in modal" goes here
+    document.getElementById("lengthErrorMsg").style.display = "inline"
     issues = true
   }
-  if (!Object.values(passwordParameters).includes(true)) {
-    // code for "display error message in modal" goes here
+  if (Object.values(passwordParameters).includes(true) == false) {
+    document.getElementById("parameterErrorMsg").style.display = "inline"
     issues = true
   }
-
   if (issues == false) {
+
     writePassword();
   }
 }
 
-
+// writes password in text field, closes settings Modal
 function writePassword() {
 
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
-
+  myModal.hide()
 }
 
+// checks password settings and writes password accordingly 
 function generatePassword() {
-  var password=""
+  var password = ""
   if (passwordParameters["lowercase"] == true) {
     for (var i = 0; i < lowercaseList.length; i++) {
       passwordList.push(lowercaseList[i])
@@ -83,22 +91,22 @@ function generatePassword() {
       passwordList.push(uppercaseList[i])
     }
   }
-  if (passwordParameters["number"] == true){
-    for (var i=0; i < numberList.length; i++){
+  if (passwordParameters["number"] == true) {
+    for (var i = 0; i < numberList.length; i++) {
       passwordList.push(numberList[i])
     }
   }
-  if (passwordParameters["special"] == true){
-    for (var i=0; i < specialList.length; i++){
+  if (passwordParameters["special"] == true) {
+    for (var i = 0; i < specialList.length; i++) {
       passwordList.push(specialList[i])
     }
   }
-  for (var i=0; i < Number(document.getElementById("passwordLength").value); i++){
-    password= password + passwordList[Math.floor(Math.random() * passwordList.length)]
+  for (var i = 0; i < Number(document.getElementById("passwordLength").value); i++) {
+    password = password + passwordList[Math.floor(Math.random() * passwordList.length)]
   }
-  passwordList=[]
+  passwordList = []
   return password
-  
+
 }
 
 // Add event listener to generate button

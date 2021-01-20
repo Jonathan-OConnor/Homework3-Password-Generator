@@ -52,6 +52,9 @@
             </span>
           </div>
         </div>
+        <div class="row text-end">
+            <p id="lengthErrorMsg" style="display: none; color: red; padding-right: 25px;">Number must be between 8 and 128</p>
+        </div>
         <div class="row" style="margin-top: 20px;">
           <div class="col-12" style="margin-left: 10px;">
             <label class="col-form-label">Select character types to be in password (Select at least one):</label>
@@ -64,7 +67,9 @@
             <label class="checkbox-inline" style="margin-right: 20px;"><input id="numberCheck" type="checkbox" value="" onClick="toggleNumber()">Numeric</label>
             <label class="checkbox-inline" style="margin-right: 20px;"><input id="specialCheck" type="checkbox" value="" onClick="toggleSpecial()">Special characters</label>
           </div>
-        
+          <div class="row text-end">
+            <p id="parameterErrorMsg" style="display: none; color: red; padding-right: 10px;">Select at least one option</p>
+        </div>
         </div>
   
         <div class="modal-footer">
@@ -74,10 +79,11 @@
       </div>
     </div>
   </div>
-  <script src="script.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
     crossorigin="anonymous"></script>
+  <script src="script.js"></script>
+  
 </body>
 
 </html>
