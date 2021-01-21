@@ -10,4 +10,4 @@ This is a password generator application. When the user presses the "Generate Pa
 
 
 ## Deployed Page:
-Link: https://jonathan-oconnor.github.io/Homework3-Password-Generator/
+Link: https://jonathan-oconnor.github.io/Random-Password-Generator/
