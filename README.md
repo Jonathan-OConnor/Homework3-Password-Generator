@@ -1,7 +1,7 @@
 # Homework3-Password-Generator
 
 ## Description:
-This is a password generator application. When the user presses the "Generate Password" button on the main page, they will be prompted to specify the desired length and characters used in their randomly generated password. Once the user has specified their passwords characteristics, a random password will be generated in the text box on the main page. 
+This is a password generator application. When the user presses the "Generate Password" button on the main page, they will be prompted to specify the desired length and characters used in their password. Once the user has specified their passwords characteristics, their random password will be generated in the text box on the main page. 
 
 ## Screenshots :
 
